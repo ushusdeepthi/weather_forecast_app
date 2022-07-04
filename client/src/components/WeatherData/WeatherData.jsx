@@ -8,6 +8,7 @@ import {
   WiRain,
   WiUmbrella,
   WiThermometer,
+  WiStrongWind,
 } from "weather-icons-react";
 import { FiStar } from "react-icons/fi";
 import { FaStar } from "react-icons/fa";
@@ -61,26 +62,26 @@ const WeatherData = ({ data }) => {
           <p>
             <WiThermometer size={36} />
             {Math.round(data_now[0].t.value)}
-            <WiCelsius size={42} />
+            <WiCelsius size={38} />
           </p>
         )}
         <p>
-          <TbTemperaturePlus size={36} />
-          {temp[temp.length - 1]} <WiCelsius weight={900} size={24} />
+          <TbTemperaturePlus size={36} /> {temp[temp.length - 1]}{" "}
+          <WiCelsius weight={900} size={38} />
         </p>
         <p>
-          <TbTemperatureMinus size={36} />
-          {temp[0]} <WiCelsius size={24} />
+          <TbTemperatureMinus size={36} /> {temp[0]} <WiCelsius size={38} />
         </p>
         {moment.utc(data[0].time).format("YYYY-MM-DD") ===
           moment().format("YYYY-MM-DD") && (
           <>
             <p>
               <WiUmbrella size={36} />
-              {data_now[0].pmean.value}
+              {data_now[0].pmean.value} mm
             </p>
             <p>
-              {Math.round(data_now[0].ws.value)} {data_now[0].ws.unit}
+              <WiStrongWind size={36} />
+              {Math.round(data_now[0].ws.value)} {data_now[0].ws.unit}{" "}
               {Math.round(data_now[0].gust.value)} {data_now[0].gust.unit}
             </p>
           </>

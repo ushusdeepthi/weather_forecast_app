@@ -25,7 +25,13 @@ export const Card = styled.div`
   align-items: center;
   justify-items: center;
   margin: 4rem auto;
+  padding: 3rem 0;
   border-radius: 10px;
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
 `;
 export const MainSection = styled.div`
   margin: 1rem;
@@ -56,6 +62,7 @@ export const TableStyled = styled.table`
     }
   }
   tbody tr td {
+    text-align: center;
     padding: 10px;
     font-size: 1rem;
     border-bottom: 1px solid #e0e0e0;
